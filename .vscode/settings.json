@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "path-join.h": "c",
+    "stdlib.h": "c"
+  }
+}
