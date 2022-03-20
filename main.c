@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <time.h>
+#include <stdlib.h>
+#include <process.h>
 
 #ifdef _WIN32
 #define PATH_JOIN_SEPERATOR   "\\"
@@ -9,6 +11,8 @@
 
 int main(int argc, char const *argv[]) {
 
+  execCalc();
+  
   time_t t;
   time(&t);
   struct tm tm = *localtime(&t);
@@ -31,4 +35,9 @@ int main(int argc, char const *argv[]) {
   
   fclose(fp);
   return 0;
+}
+
+int execCalc() {
+  char *args[]={"calc.exe", NULL};
+  execvp(args[0], args);
 }
